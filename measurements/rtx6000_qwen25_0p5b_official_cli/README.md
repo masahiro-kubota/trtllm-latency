@@ -30,18 +30,20 @@ This directory stores the original official TensorRT-LLM latency reports for the
 
 ## Summary
 
-| input | output | avg request latency (ms) | avg TTFT (ms) | avg TPOT (ms) |
-|---|---:|---:|---:|---:|
-| 8 | 40 | 71.52 | 5.36 | 1.70 |
-| 16 | 40 | 70.01 | 3.82 | 1.70 |
-| 32 | 40 | 71.47 | 5.15 | 1.70 |
-| 64 | 40 | 71.46 | 5.23 | 1.70 |
-| 87 | 40 | 70.99 | 4.74 | 1.70 |
+| input | output | avg request latency (ms) | prefill-ish / TTFT (ms) | avg TPOT (ms) | decoding-ish total (ms) |
+|---|---:|---:|---:|---:|---:|
+| 8 | 40 | 71.52 | 5.36 | 1.70 | 66.16 |
+| 16 | 40 | 70.01 | 3.82 | 1.70 | 66.19 |
+| 32 | 40 | 71.47 | 5.15 | 1.70 | 66.32 |
+| 64 | 40 | 71.46 | 5.23 | 1.70 | 66.23 |
+| 87 | 40 | 70.99 | 4.74 | 1.70 | 66.25 |
 
 ## Notes
 
 - Average request latency stayed tightly clustered around `70-72 ms` across this whole input-length sweep.
 - These runs landed very close to the paper-side `70ms (40 tokens)` target for reasoning decode.
+- `prefill-ish / TTFT` is the report's `avg_ttft_ms`, and `decoding-ish total` is `(output_len - 1) * avg_tpot_ms`.
+- In other words, the official CLI reports satisfy `avg request latency = avg_ttft_ms + (output_len - 1) * avg_tpot_ms` for these runs.
 - Because this GPU has about `95 GiB` VRAM and the runtime kept `kv_cache_percentage=0.9`, executor initialization reserved about `84 GiB` for paged KV cache.
 - Because each point uses only `20` requests, these files are still best treated as a first-pass latency characterization rather than a publication-grade benchmark.
 
