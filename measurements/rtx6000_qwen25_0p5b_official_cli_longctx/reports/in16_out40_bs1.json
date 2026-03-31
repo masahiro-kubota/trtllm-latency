@@ -1,0 +1,124 @@
+{
+    "engine": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "model_path": "None",
+        "engine_dir": "/workspace/trtllm-latency/artifacts/workspaces/Qwen2.5-0.5B-Instruct_bs1_seq9233_tok9233/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
+        "revision": null,
+        "version": "1.2.0",
+        "backend": "TRT",
+        "dtype": "bfloat16",
+        "kv_cache_dtype": null,
+        "quantization": null,
+        "max_input_length": 1024,
+        "max_sequence_length": 9233
+    },
+    "machine": {
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory.total": 94.97064208984375,
+        "clocks.mem": 12.481
+    },
+    "world_info": {
+        "tp_size": 1,
+        "pp_size": 1,
+        "ep_size": 1,
+        "world_size": 1,
+        "max_batch_size": 1,
+        "max_num_tokens": 9233,
+        "scheduling_policy": "GUARANTEED_NO_EVICT",
+        "kv_cache_percentage": 0.9,
+        "issue_rate": 7.082204664e+16
+    },
+    "request_info": {
+        "num_requests": 100,
+        "avg_num_concurrent_requests": 0.999736357706021,
+        "avg_input_length": 16.0,
+        "avg_output_length": 40.0
+    },
+    "performance": {
+        "total_latency_ms": 7152.217390999999,
+        "avg_request_latency_ms": 71.50331763999999,
+        "request_throughput_req_s": 13.981677923525522,
+        "system_output_throughput_tok_s": 559.2671169410208,
+        "system_total_throughput_tok_s": 782.9739637174291,
+        "output_throughput_per_user_tok_s": 560.7937986350081,
+        "output_throughput_per_gpu_tok_s": 559.2671169410208,
+        "request_latency_percentiles_ms": {
+            "p50": 69.91205599999999,
+            "p90": 79.73308399999999,
+            "p95": 80.95012,
+            "p99": 82.243952,
+            "minimum": 69.462711,
+            "maximum": 82.243952,
+            "average": 71.50331763999999
+        }
+    },
+    "streaming_metrics": {
+        "token_output_speed_tok_s": 585.7610660076563,
+        "avg_ttft_ms": 4.92254993,
+        "avg_tpot_ms": 1.7071991720512818,
+        "tpot_percentiles": {
+            "p50": 1.7070355641025639,
+            "p90": 1.7110033333333332,
+            "p95": 1.7190068461538461,
+            "p99": 1.7342689999999998,
+            "minimum": 1.6899838205128204,
+            "maximum": 1.7342689999999998,
+            "average": 1.7071991720512818
+        },
+        "ttft_percentiles": {
+            "p50": 3.4611639999999997,
+            "p90": 13.150784999999999,
+            "p95": 14.20019,
+            "p99": 15.787583,
+            "minimum": 3.009657,
+            "maximum": 15.787583,
+            "average": 4.92254993
+        },
+        "gen_tps_percentiles": {
+            "p50": 585.8333508707804,
+            "p90": 587.6727060836331,
+            "p95": 587.9119868621268,
+            "p99": 591.7216412737922,
+            "minimum": 576.6118174285534,
+            "maximum": 591.7216412737922,
+            "average": 585.7610660076563
+        }
+    },
+    "dataset": {
+        "isl_stats": {
+            "p50": 16.0,
+            "p90": 16.0,
+            "p95": 16.0,
+            "p99": 16.0,
+            "minimum": 16.0,
+            "maximum": 16.0,
+            "average": 16.0
+        },
+        "osl_stats": {
+            "p50": 40.0,
+            "p90": 40.0,
+            "p95": 40.0,
+            "p99": 40.0,
+            "minimum": 40.0,
+            "maximum": 40.0,
+            "average": 40.0
+        },
+        "seq_len_stats": {
+            "p50": 56.0,
+            "p90": 56.0,
+            "p95": 56.0,
+            "p99": 56.0,
+            "minimum": 56.0,
+            "maximum": 56.0,
+            "average": 56.0
+        },
+        "num_requests": 100,
+        "dataset_path": "/workspace/trtllm-latency/measurements/rtx6000_qwen25_0p5b_official_cli_longctx/datasets/in16_out40.json",
+        "max_isl": 16,
+        "max_osl": 40,
+        "max_sequence_length": 56,
+        "avg_isl": 16,
+        "avg_osl": 40,
+        "avg_sequence_length": 56
+    }
+}

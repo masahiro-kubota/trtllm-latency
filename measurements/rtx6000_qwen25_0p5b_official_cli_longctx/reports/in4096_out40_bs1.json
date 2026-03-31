@@ -1,0 +1,124 @@
+{
+    "engine": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "model_path": "None",
+        "engine_dir": "/workspace/trtllm-latency/artifacts/workspaces/Qwen2.5-0.5B-Instruct_bs1_seq9233_tok9233/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
+        "revision": null,
+        "version": "1.2.0",
+        "backend": "TRT",
+        "dtype": "bfloat16",
+        "kv_cache_dtype": null,
+        "quantization": null,
+        "max_input_length": 1024,
+        "max_sequence_length": 9233
+    },
+    "machine": {
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory.total": 94.97064208984375,
+        "clocks.mem": 12.481
+    },
+    "world_info": {
+        "tp_size": 1,
+        "pp_size": 1,
+        "ep_size": 1,
+        "world_size": 1,
+        "max_batch_size": 1,
+        "max_num_tokens": 9233,
+        "scheduling_policy": "GUARANTEED_NO_EVICT",
+        "kv_cache_percentage": 0.9,
+        "issue_rate": 9.867547513e+16
+    },
+    "request_info": {
+        "num_requests": 100,
+        "avg_num_concurrent_requests": 0.9997655044823764,
+        "avg_input_length": 4096.0,
+        "avg_output_length": 40.0
+    },
+    "performance": {
+        "total_latency_ms": 9968.531696,
+        "avg_request_latency_ms": 99.6619412,
+        "request_throughput_req_s": 10.03156764201555,
+        "system_output_throughput_tok_s": 401.26270568062205,
+        "system_total_throughput_tok_s": 41490.56376737632,
+        "output_throughput_per_user_tok_s": 402.071003845889,
+        "output_throughput_per_gpu_tok_s": 401.26270568062205,
+        "request_latency_percentiles_ms": {
+            "p50": 99.79835399999999,
+            "p90": 101.561408,
+            "p95": 102.667547,
+            "p99": 138.900746,
+            "minimum": 93.07616399999999,
+            "maximum": 138.900746,
+            "average": 99.6619412
+        }
+    },
+    "streaming_metrics": {
+        "token_output_speed_tok_s": 520.0845919572123,
+        "avg_ttft_ms": 24.66355957,
+        "avg_tpot_ms": 1.9230354264102563,
+        "tpot_percentiles": {
+            "p50": 1.9195181282051281,
+            "p90": 1.9431042820512818,
+            "p95": 1.958697641025641,
+            "p99": 2.037217974358974,
+            "minimum": 1.8124624615384615,
+            "maximum": 2.037217974358974,
+            "average": 1.9230354264102563
+        },
+        "ttft_percentiles": {
+            "p50": 24.940913,
+            "p90": 26.473301,
+            "p95": 27.556095,
+            "p99": 64.269053,
+            "minimum": 18.334274999999998,
+            "maximum": 64.269053,
+            "average": 24.66355957
+        },
+        "gen_tps_percentiles": {
+            "p50": 520.9663787401262,
+            "p90": 522.6791207609768,
+            "p95": 525.769010988451,
+            "p99": 551.7355648575342,
+            "minimum": 490.86549038261717,
+            "maximum": 551.7355648575342,
+            "average": 520.0845919572123
+        }
+    },
+    "dataset": {
+        "isl_stats": {
+            "p50": 4096.0,
+            "p90": 4096.0,
+            "p95": 4096.0,
+            "p99": 4096.0,
+            "minimum": 4096.0,
+            "maximum": 4096.0,
+            "average": 4096.0
+        },
+        "osl_stats": {
+            "p50": 40.0,
+            "p90": 40.0,
+            "p95": 40.0,
+            "p99": 40.0,
+            "minimum": 40.0,
+            "maximum": 40.0,
+            "average": 40.0
+        },
+        "seq_len_stats": {
+            "p50": 4136.0,
+            "p90": 4136.0,
+            "p95": 4136.0,
+            "p99": 4136.0,
+            "minimum": 4136.0,
+            "maximum": 4136.0,
+            "average": 4136.0
+        },
+        "num_requests": 100,
+        "dataset_path": "/workspace/trtllm-latency/measurements/rtx6000_qwen25_0p5b_official_cli_longctx/datasets/in4096_out40.json",
+        "max_isl": 4096,
+        "max_osl": 40,
+        "max_sequence_length": 4136,
+        "avg_isl": 4096,
+        "avg_osl": 40,
+        "avg_sequence_length": 4136
+    }
+}

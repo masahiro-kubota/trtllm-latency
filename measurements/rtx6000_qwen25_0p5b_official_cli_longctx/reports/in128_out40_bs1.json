@@ -1,0 +1,124 @@
+{
+    "engine": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "model_path": "None",
+        "engine_dir": "/workspace/trtllm-latency/artifacts/workspaces/Qwen2.5-0.5B-Instruct_bs1_seq9233_tok9233/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
+        "revision": null,
+        "version": "1.2.0",
+        "backend": "TRT",
+        "dtype": "bfloat16",
+        "kv_cache_dtype": null,
+        "quantization": null,
+        "max_input_length": 1024,
+        "max_sequence_length": 9233
+    },
+    "machine": {
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory.total": 94.97064208984375,
+        "clocks.mem": 12.481
+    },
+    "world_info": {
+        "tp_size": 1,
+        "pp_size": 1,
+        "ep_size": 1,
+        "world_size": 1,
+        "max_batch_size": 1,
+        "max_num_tokens": 9233,
+        "scheduling_policy": "GUARANTEED_NO_EVICT",
+        "kv_cache_percentage": 0.9,
+        "issue_rate": 7.181600176999999e+16
+    },
+    "request_info": {
+        "num_requests": 100,
+        "avg_num_concurrent_requests": 0.9996914168795895,
+        "avg_input_length": 128.0,
+        "avg_output_length": 40.0
+    },
+    "performance": {
+        "total_latency_ms": 7251.916427,
+        "avg_request_latency_ms": 72.49678607999999,
+        "request_throughput_req_s": 13.789458415114192,
+        "system_output_throughput_tok_s": 551.5783366045677,
+        "system_total_throughput_tok_s": 2316.6290137391848,
+        "output_throughput_per_user_tok_s": 554.2103678356921,
+        "output_throughput_per_gpu_tok_s": 551.5783366045677,
+        "request_latency_percentiles_ms": {
+            "p50": 70.62191,
+            "p90": 77.35604699999999,
+            "p95": 79.94805699999999,
+            "p99": 107.985742,
+            "minimum": 69.916192,
+            "maximum": 107.985742,
+            "average": 72.49678607999999
+        }
+    },
+    "streaming_metrics": {
+        "token_output_speed_tok_s": 581.1054813498757,
+        "avg_ttft_ms": 5.36224574,
+        "avg_tpot_ms": 1.7213984702564102,
+        "tpot_percentiles": {
+            "p50": 1.7148442051282051,
+            "p90": 1.758654564102564,
+            "p95": 1.775221333333333,
+            "p99": 1.8281999487179488,
+            "minimum": 1.5992940512820513,
+            "maximum": 1.8281999487179488,
+            "average": 1.7213984702564102
+        },
+        "ttft_percentiles": {
+            "p50": 3.588667,
+            "p90": 9.743965,
+            "p95": 14.172682,
+            "p99": 41.123193,
+            "minimum": 3.120743,
+            "maximum": 41.123193,
+            "average": 5.36224574
+        },
+        "gen_tps_percentiles": {
+            "p50": 583.1449488560198,
+            "p90": 591.2659736756564,
+            "p95": 593.2847017356239,
+            "p99": 625.2758829424546,
+            "minimum": 546.9861218961657,
+            "maximum": 625.2758829424546,
+            "average": 581.1054813498757
+        }
+    },
+    "dataset": {
+        "isl_stats": {
+            "p50": 128.0,
+            "p90": 128.0,
+            "p95": 128.0,
+            "p99": 128.0,
+            "minimum": 128.0,
+            "maximum": 128.0,
+            "average": 128.0
+        },
+        "osl_stats": {
+            "p50": 40.0,
+            "p90": 40.0,
+            "p95": 40.0,
+            "p99": 40.0,
+            "minimum": 40.0,
+            "maximum": 40.0,
+            "average": 40.0
+        },
+        "seq_len_stats": {
+            "p50": 168.0,
+            "p90": 168.0,
+            "p95": 168.0,
+            "p99": 168.0,
+            "minimum": 168.0,
+            "maximum": 168.0,
+            "average": 168.0
+        },
+        "num_requests": 100,
+        "dataset_path": "/workspace/trtllm-latency/measurements/rtx6000_qwen25_0p5b_official_cli_longctx/datasets/in128_out40.json",
+        "max_isl": 128,
+        "max_osl": 40,
+        "max_sequence_length": 168,
+        "avg_isl": 128,
+        "avg_osl": 40,
+        "avg_sequence_length": 168
+    }
+}

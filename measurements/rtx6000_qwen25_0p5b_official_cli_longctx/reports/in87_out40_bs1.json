@@ -1,0 +1,124 @@
+{
+    "engine": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "model_path": "None",
+        "engine_dir": "/workspace/trtllm-latency/artifacts/workspaces/Qwen2.5-0.5B-Instruct_bs1_seq9233_tok9233/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
+        "revision": null,
+        "version": "1.2.0",
+        "backend": "TRT",
+        "dtype": "bfloat16",
+        "kv_cache_dtype": null,
+        "quantization": null,
+        "max_input_length": 1024,
+        "max_sequence_length": 9233
+    },
+    "machine": {
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory.total": 94.97064208984375,
+        "clocks.mem": 12.481
+    },
+    "world_info": {
+        "tp_size": 1,
+        "pp_size": 1,
+        "ep_size": 1,
+        "world_size": 1,
+        "max_batch_size": 1,
+        "max_num_tokens": 9233,
+        "scheduling_policy": "GUARANTEED_NO_EVICT",
+        "kv_cache_percentage": 0.9,
+        "issue_rate": 7.118595505e+16
+    },
+    "request_info": {
+        "num_requests": 100,
+        "avg_num_concurrent_requests": 0.9997217351601041,
+        "avg_input_length": 87.0,
+        "avg_output_length": 40.0
+    },
+    "performance": {
+        "total_latency_ms": 7189.693821,
+        "avg_request_latency_ms": 71.87693182,
+        "request_throughput_req_s": 13.908798133783561,
+        "system_output_throughput_tok_s": 556.3519253513425,
+        "system_total_throughput_tok_s": 1766.4173629905124,
+        "output_throughput_per_user_tok_s": 558.3381867660946,
+        "output_throughput_per_gpu_tok_s": 556.3519253513425,
+        "request_latency_percentiles_ms": {
+            "p50": 70.176052,
+            "p90": 78.175737,
+            "p95": 79.653494,
+            "p99": 108.327305,
+            "minimum": 69.715841,
+            "maximum": 108.327305,
+            "average": 71.87693182
+        }
+    },
+    "streaming_metrics": {
+        "token_output_speed_tok_s": 584.0683155790655,
+        "avg_ttft_ms": 5.1024895599999995,
+        "avg_tpot_ms": 1.712165186153846,
+        "tpot_percentiles": {
+            "p50": 1.7098942051282051,
+            "p90": 1.7243890512820512,
+            "p95": 1.7317842307692306,
+            "p99": 1.7498307948717946,
+            "minimum": 1.6980238461538462,
+            "maximum": 1.7498307948717946,
+            "average": 1.712165186153846
+        },
+        "ttft_percentiles": {
+            "p50": 3.456597,
+            "p90": 11.621239,
+            "p95": 13.029593,
+            "p99": 41.701249999999995,
+            "minimum": 3.0400929999999997,
+            "maximum": 41.701249999999995,
+            "average": 5.1024895599999995
+        },
+        "gen_tps_percentiles": {
+            "p50": 584.8926371075326,
+            "p90": 586.0968098480133,
+            "p95": 586.4655833574661,
+            "p99": 588.9198801683948,
+            "minimum": 571.4838274253066,
+            "maximum": 588.9198801683948,
+            "average": 584.0683155790655
+        }
+    },
+    "dataset": {
+        "isl_stats": {
+            "p50": 87.0,
+            "p90": 87.0,
+            "p95": 87.0,
+            "p99": 87.0,
+            "minimum": 87.0,
+            "maximum": 87.0,
+            "average": 87.0
+        },
+        "osl_stats": {
+            "p50": 40.0,
+            "p90": 40.0,
+            "p95": 40.0,
+            "p99": 40.0,
+            "minimum": 40.0,
+            "maximum": 40.0,
+            "average": 40.0
+        },
+        "seq_len_stats": {
+            "p50": 127.0,
+            "p90": 127.0,
+            "p95": 127.0,
+            "p99": 127.0,
+            "minimum": 127.0,
+            "maximum": 127.0,
+            "average": 127.0
+        },
+        "num_requests": 100,
+        "dataset_path": "/workspace/trtllm-latency/measurements/rtx6000_qwen25_0p5b_official_cli_longctx/datasets/in87_out40.json",
+        "max_isl": 87,
+        "max_osl": 40,
+        "max_sequence_length": 127,
+        "avg_isl": 87,
+        "avg_osl": 40,
+        "avg_sequence_length": 127
+    }
+}
