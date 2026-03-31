@@ -1,0 +1,124 @@
+{
+    "engine": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "model_path": "None",
+        "engine_dir": "/media/masa/ssd_data/trtllm-latency/artifacts/workspaces/Qwen2.5-0.5B-Instruct_bs1_seq1064_tok1064_bf16/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
+        "revision": null,
+        "version": "1.2.0",
+        "backend": "TRT",
+        "dtype": "bfloat16",
+        "kv_cache_dtype": null,
+        "quantization": null,
+        "max_input_length": 1024,
+        "max_sequence_length": 1064
+    },
+    "machine": {
+        "name": "NVIDIA GeForce RTX 4070 Ti",
+        "memory.total": 11.5906982421875,
+        "clocks.mem": 10.501
+    },
+    "world_info": {
+        "tp_size": 1,
+        "pp_size": 1,
+        "ep_size": 1,
+        "world_size": 1,
+        "max_batch_size": 1,
+        "max_num_tokens": 1064,
+        "scheduling_policy": "GUARANTEED_NO_EVICT",
+        "kv_cache_percentage": 0.9,
+        "issue_rate": 1.5205866157e+17
+    },
+    "request_info": {
+        "num_requests": 100,
+        "avg_num_concurrent_requests": 0.999855167070738,
+        "avg_input_length": 8.0,
+        "avg_output_length": 40.0
+    },
+    "performance": {
+        "total_latency_ms": 15440.756542,
+        "avg_request_latency_ms": 154.38520212,
+        "request_throughput_req_s": 6.476366603410436,
+        "system_output_throughput_tok_s": 259.05466413641744,
+        "system_total_throughput_tok_s": 310.8655969637009,
+        "output_throughput_per_user_tok_s": 287.1759148098673,
+        "output_throughput_per_gpu_tok_s": 259.05466413641744,
+        "request_latency_percentiles_ms": {
+            "p50": 126.014085,
+            "p90": 239.946745,
+            "p95": 320.008309,
+            "p99": 440.642271,
+            "minimum": 114.50765799999999,
+            "maximum": 440.642271,
+            "average": 154.38520212
+        }
+    },
+    "streaming_metrics": {
+        "token_output_speed_tok_s": 7087.925365980045,
+        "avg_ttft_ms": 23.114671989999998,
+        "avg_tpot_ms": 3.3659110289743586,
+        "tpot_percentiles": {
+            "p50": 2.892894641025641,
+            "p90": 5.411006025641026,
+            "p95": 8.11539705128205,
+            "p99": 11.205210794871794,
+            "minimum": 0.0035942051282051284,
+            "maximum": 11.205210794871794,
+            "average": 3.3659110289743586
+        },
+        "ttft_percentiles": {
+            "p50": 8.622869,
+            "p90": 56.942943,
+            "p95": 101.36341999999999,
+            "p99": 298.960401,
+            "minimum": 3.35025,
+            "maximum": 298.960401,
+            "average": 23.114671989999998
+        },
+        "gen_tps_percentiles": {
+            "p50": 348.0263266388774,
+            "p90": 495.02636853149363,
+            "p95": 2147.6028732062973,
+            "p99": 278225.6338550658,
+            "minimum": 89.24419346556716,
+            "maximum": 278225.6338550658,
+            "average": 7087.925365980045
+        }
+    },
+    "dataset": {
+        "isl_stats": {
+            "p50": 8.0,
+            "p90": 8.0,
+            "p95": 8.0,
+            "p99": 8.0,
+            "minimum": 8.0,
+            "maximum": 8.0,
+            "average": 8.0
+        },
+        "osl_stats": {
+            "p50": 40.0,
+            "p90": 40.0,
+            "p95": 40.0,
+            "p99": 40.0,
+            "minimum": 40.0,
+            "maximum": 40.0,
+            "average": 40.0
+        },
+        "seq_len_stats": {
+            "p50": 48.0,
+            "p90": 48.0,
+            "p95": 48.0,
+            "p99": 48.0,
+            "minimum": 48.0,
+            "maximum": 48.0,
+            "average": 48.0
+        },
+        "num_requests": 100,
+        "dataset_path": "/media/masa/ssd_data/trtllm-latency/measurements/rtx4070ti_qwen25_0p5b_official_cli_longctx/datasets/in8_out40.json",
+        "max_isl": 8,
+        "max_osl": 40,
+        "max_sequence_length": 48,
+        "avg_isl": 8,
+        "avg_osl": 40,
+        "avg_sequence_length": 48
+    }
+}

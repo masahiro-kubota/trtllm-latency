@@ -1,0 +1,124 @@
+{
+    "engine": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "model_path": "None",
+        "engine_dir": "/media/masa/ssd_data/trtllm-latency/artifacts/workspaces/Qwen2.5-0.5B-Instruct_bs1_seq1064_tok1064_bf16/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
+        "revision": null,
+        "version": "1.2.0",
+        "backend": "TRT",
+        "dtype": "bfloat16",
+        "kv_cache_dtype": null,
+        "quantization": null,
+        "max_input_length": 1024,
+        "max_sequence_length": 1064
+    },
+    "machine": {
+        "name": "NVIDIA GeForce RTX 4070 Ti",
+        "memory.total": 11.5906982421875,
+        "clocks.mem": 10.501
+    },
+    "world_info": {
+        "tp_size": 1,
+        "pp_size": 1,
+        "ep_size": 1,
+        "world_size": 1,
+        "max_batch_size": 1,
+        "max_num_tokens": 1064,
+        "scheduling_policy": "GUARANTEED_NO_EVICT",
+        "kv_cache_percentage": 0.9,
+        "issue_rate": 1.414981686e+17
+    },
+    "request_info": {
+        "num_requests": 20,
+        "avg_num_concurrent_requests": 0.9998551327764488,
+        "avg_input_length": 1024.0,
+        "avg_output_length": 40.0
+    },
+    "performance": {
+        "total_latency_ms": 3077.990929,
+        "avg_request_latency_ms": 153.87725145,
+        "request_throughput_req_s": 6.497744945108641,
+        "system_output_throughput_tok_s": 259.9097978043456,
+        "system_total_throughput_tok_s": 6913.600621595594,
+        "output_throughput_per_user_tok_s": 271.6756659745515,
+        "output_throughput_per_gpu_tok_s": 259.9097978043456,
+        "request_latency_percentiles_ms": {
+            "p50": 137.143789,
+            "p90": 237.083978,
+            "p95": 248.027557,
+            "p99": 248.027557,
+            "minimum": 129.80866899999998,
+            "maximum": 248.027557,
+            "average": 153.87725145
+        }
+    },
+    "streaming_metrics": {
+        "token_output_speed_tok_s": 316.2946982618066,
+        "avg_ttft_ms": 20.65604575,
+        "avg_tpot_ms": 3.415928351282051,
+        "tpot_percentiles": {
+            "p50": 3.086532,
+            "p90": 5.642650846153845,
+            "p95": 5.740529769230768,
+            "p99": 5.740529769230768,
+            "minimum": 1.6422577435897434,
+            "maximum": 5.740529769230768,
+            "average": 3.415928351282051
+        },
+        "ttft_percentiles": {
+            "p50": 14.800453999999998,
+            "p90": 35.784682,
+            "p95": 77.85131899999999,
+            "p99": 77.85131899999999,
+            "minimum": 12.682018,
+            "maximum": 77.85131899999999,
+            "average": 20.65604575
+        },
+        "gen_tps_percentiles": {
+            "p50": 325.2767563068244,
+            "p90": 381.4767078783127,
+            "p95": 608.9178168916051,
+            "p99": 608.9178168916051,
+            "minimum": 174.19995021365423,
+            "maximum": 608.9178168916051,
+            "average": 316.2946982618066
+        }
+    },
+    "dataset": {
+        "isl_stats": {
+            "p50": 1024.0,
+            "p90": 1024.0,
+            "p95": 1024.0,
+            "p99": 1024.0,
+            "minimum": 1024.0,
+            "maximum": 1024.0,
+            "average": 1024.0
+        },
+        "osl_stats": {
+            "p50": 40.0,
+            "p90": 40.0,
+            "p95": 40.0,
+            "p99": 40.0,
+            "minimum": 40.0,
+            "maximum": 40.0,
+            "average": 40.0
+        },
+        "seq_len_stats": {
+            "p50": 1064.0,
+            "p90": 1064.0,
+            "p95": 1064.0,
+            "p99": 1064.0,
+            "minimum": 1064.0,
+            "maximum": 1064.0,
+            "average": 1064.0
+        },
+        "num_requests": 20,
+        "dataset_path": "/media/masa/ssd_data/trtllm-latency/measurements/rtx4070ti_qwen25_0p5b_official_cli_longctx/datasets/in1024_out40.json",
+        "max_isl": 1024,
+        "max_osl": 40,
+        "max_sequence_length": 1064,
+        "avg_isl": 1024,
+        "avg_osl": 40,
+        "avg_sequence_length": 1064
+    }
+}
