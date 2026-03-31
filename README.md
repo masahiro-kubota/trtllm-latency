@@ -91,8 +91,27 @@ Outputs are written under:
 Important status note:
 
 - `greedy` decoding is implemented and measured via [`configs/greedy.yaml`](/media/masa/ssd_data/trtllm-latency/configs/greedy.yaml).
+- This `greedy` setting is used only to stabilize and simplify decode-latency measurement.
+- It should not be treated as the default quality-oriented or paper-faithful sampling setup for downstream task performance.
+- In particular, `greedy` can change reasoning behavior, handoff timing, and final task quality relative to sampled decoding.
 - A full 3-way comparison of `bf16` vs `fp8` vs `fp8+kv` is **not done yet**.
 - Current measurements only cover:
   - `bf16` baseline
   - `fp8` in the official CLI path, which effectively behaves as `fp8(+kv)` in the current setup
 - The unresolved gap is that the official `trtllm-bench build` surface does not cleanly expose a separate `kv_cache_quant_algo` control for this repo's current workflow, so `fp8` and `fp8+kv` have not yet been split into separate reproduced measurements.
+
+Current reproduced matrix results on `NVIDIA GeForce RTX 4070 Ti` for the
+paper-like `input=87`, `output=40`, batch-1 case:
+
+| condition | input | output | engine dtype | kv cache dtype | avg request latency (ms) | prefill-ish / TTFT (ms) | avg TPOT (ms) | decoding-ish total (ms) |
+|---|---:|---:|---|---|---:|---:|---:|---:|
+| `bf16` baseline | 87 | 40 | `bfloat16` | `None` | `189.72` | `26.37` | `4.19` | `163.36` |
+| `fp8(+kv)` official CLI path | 87 | 40 | `bfloat16` | `FP8` | `156.89` | `42.13` | `2.94` | `114.76` |
+
+Source reports:
+
+- [`artifacts/matrix_reports/fp16_baseline_rerun.json`](/media/masa/ssd_data/trtllm-latency/artifacts/matrix_reports/fp16_baseline_rerun.json)
+- [`artifacts/matrix_reports/fp8_baseline_rerun.json`](/media/masa/ssd_data/trtllm-latency/artifacts/matrix_reports/fp8_baseline_rerun.json)
+
+Here, `prefill-ish / TTFT` is the report's `avg_ttft_ms`, and
+`decoding-ish total` is `(output_len - 1) * avg_tpot_ms`.
