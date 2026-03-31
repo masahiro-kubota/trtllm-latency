@@ -2,15 +2,15 @@
     "engine": {
         "model": "Qwen/Qwen2.5-0.5B-Instruct",
         "model_path": "None",
-        "engine_dir": "/workspace/trtllm-latency/artifacts/workspaces/Qwen2.5-0.5B-Instruct_bs1_seq127_tok127/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
+        "engine_dir": "/workspace/trtllm-latency/artifacts/workspaces/Qwen2.5-0.5B-Instruct_bs1_seq1065_tok1065/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
         "revision": null,
         "version": "1.2.0",
         "backend": "TRT",
         "dtype": "bfloat16",
         "kv_cache_dtype": null,
         "quantization": null,
-        "max_input_length": 127,
-        "max_sequence_length": 127
+        "max_input_length": 1024,
+        "max_sequence_length": 1065
     },
     "machine": {
         "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
@@ -23,65 +23,65 @@
         "ep_size": 1,
         "world_size": 1,
         "max_batch_size": 1,
-        "max_num_tokens": 127,
+        "max_num_tokens": 1065,
         "scheduling_policy": "GUARANTEED_NO_EVICT",
         "kv_cache_percentage": 0.9,
-        "issue_rate": 6.74985455e+16
+        "issue_rate": 7.022279755e+16
     },
     "request_info": {
         "num_requests": 20,
-        "avg_num_concurrent_requests": 0.9996757946795657,
+        "avg_num_concurrent_requests": 0.9997546333616851,
         "avg_input_length": 87.0,
         "avg_output_length": 40.0
     },
     "performance": {
-        "total_latency_ms": 1420.269721,
-        "avg_request_latency_ms": 70.99046309999999,
-        "request_throughput_req_s": 14.081832277546669,
-        "system_output_throughput_tok_s": 563.2732911018667,
-        "system_total_throughput_tok_s": 1788.3926992484267,
-        "output_throughput_per_user_tok_s": 564.4619787912635,
-        "output_throughput_per_gpu_tok_s": 563.2732911018667,
+        "total_latency_ms": 1474.73594,
+        "avg_request_latency_ms": 73.71870445,
+        "request_throughput_req_s": 13.561749908936239,
+        "system_output_throughput_tok_s": 542.4699963574496,
+        "system_total_throughput_tok_s": 1722.3422384349024,
+        "output_throughput_per_user_tok_s": 549.4930245269543,
+        "output_throughput_per_gpu_tok_s": 542.4699963574496,
         "request_latency_percentiles_ms": {
-            "p50": 69.909758,
-            "p90": 78.687057,
-            "p95": 81.777901,
-            "p99": 81.777901,
-            "minimum": 69.38170699999999,
-            "maximum": 81.777901,
-            "average": 70.99046309999999
+            "p50": 70.52062,
+            "p90": 81.617269,
+            "p95": 115.507184,
+            "p99": 115.507184,
+            "minimum": 69.619239,
+            "maximum": 115.507184,
+            "average": 73.71870445
         }
     },
     "streaming_metrics": {
-        "token_output_speed_tok_s": 588.6887803728948,
-        "avg_ttft_ms": 4.7357107,
-        "avg_tpot_ms": 1.698839805128205,
+        "token_output_speed_tok_s": 584.0388871989313,
+        "avg_ttft_ms": 6.933824799999999,
+        "avg_tpot_ms": 1.7124328115384615,
         "tpot_percentiles": {
-            "p50": 1.700715076923077,
-            "p90": 1.7047716666666666,
-            "p95": 1.722114076923077,
-            "p99": 1.722114076923077,
-            "minimum": 1.6338592051282053,
-            "maximum": 1.722114076923077,
-            "average": 1.698839805128205
+            "p50": 1.7168239743589742,
+            "p90": 1.7363175641025639,
+            "p95": 1.7383375128205127,
+            "p99": 1.7383375128205127,
+            "minimum": 1.645581,
+            "maximum": 1.7383375128205127,
+            "average": 1.7124328115384615
         },
         "ttft_percentiles": {
-            "p50": 3.498805,
-            "p90": 12.365729,
-            "p95": 15.461649999999999,
-            "p99": 15.461649999999999,
-            "minimum": 3.0149399999999997,
-            "maximum": 15.461649999999999,
-            "average": 4.7357107
+            "p50": 3.4905739999999996,
+            "p90": 14.322776,
+            "p95": 49.147583,
+            "p99": 49.147583,
+            "minimum": 3.1645149999999997,
+            "maximum": 49.147583,
+            "average": 6.933824799999999
         },
         "gen_tps_percentiles": {
-            "p50": 588.0078601272232,
-            "p90": 588.9924648079644,
-            "p95": 612.0478416140712,
-            "p99": 612.0478416140712,
-            "minimum": 580.6816246381962,
-            "maximum": 612.0478416140712,
-            "average": 588.6887803728948
+            "p50": 585.0411810487341,
+            "p90": 587.8022443344718,
+            "p95": 607.6881052953333,
+            "p99": 607.6881052953333,
+            "minimum": 575.2622794048007,
+            "maximum": 607.6881052953333,
+            "average": 584.0388871989313
         }
     },
     "dataset": {
@@ -113,7 +113,7 @@
             "average": 127.0
         },
         "num_requests": 20,
-        "dataset_path": "/workspace/trtllm-latency/artifacts/datasets/in87_out40.json",
+        "dataset_path": "/workspace/trtllm-latency/artifacts/datasets_seq1065/in87_out40.json",
         "max_isl": 87,
         "max_osl": 40,
         "max_sequence_length": 127,
