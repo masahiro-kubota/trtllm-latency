@@ -66,6 +66,13 @@ You can override sweep settings:
 INPUT_LENGTHS="8 16 32 64 128" OUTPUT_LEN=40 NUM_REQUESTS=100 WARMUP=10 ./run_latency_sweep.sh
 ```
 
+Recorded sweeps in this repo:
+
+- [`measurements/rtx4070ti_qwen25_0p5b_official_cli/README.md`](/media/masa/ssd_data/trtllm-latency/measurements/rtx4070ti_qwen25_0p5b_official_cli/README.md)
+- [`measurements/rtx4070ti_qwen25_0p5b_official_cli_longctx/README.md`](/media/masa/ssd_data/trtllm-latency/measurements/rtx4070ti_qwen25_0p5b_official_cli_longctx/README.md)
+- [`measurements/rtx4070ti_qwen25_0p5b_official_cli_ultralongctx/README.md`](/media/masa/ssd_data/trtllm-latency/measurements/rtx4070ti_qwen25_0p5b_official_cli_ultralongctx/README.md)
+- [`measurements/rtx6000_qwen25_0p5b_official_cli/README.md`](/media/masa/ssd_data/trtllm-latency/measurements/rtx6000_qwen25_0p5b_official_cli/README.md)
+
 ## Notes
 
 - Dependencies are managed in [`pyproject.toml`](/media/masa/ssd_data/trtllm-latency/pyproject.toml) and installed with `uv sync`.

@@ -26,62 +26,62 @@
         "max_num_tokens": 1064,
         "scheduling_policy": "GUARANTEED_NO_EVICT",
         "kv_cache_percentage": 0.9,
-        "issue_rate": 1.6542351775e+17
+        "issue_rate": 1.8061848568e+17
     },
     "request_info": {
-        "num_requests": 20,
-        "avg_num_concurrent_requests": 0.9998767997911152,
+        "num_requests": 100,
+        "avg_num_concurrent_requests": 0.9998633223282631,
         "avg_input_length": 768.0,
         "avg_output_length": 40.0
     },
     "performance": {
-        "total_latency_ms": 3444.6857179999997,
-        "avg_request_latency_ms": 172.2130666,
-        "request_throughput_req_s": 5.80604491593854,
-        "system_output_throughput_tok_s": 232.2417966375416,
-        "system_total_throughput_tok_s": 4691.2842920783405,
-        "output_throughput_per_user_tok_s": 244.42525174174574,
-        "output_throughput_per_gpu_tok_s": 232.2417966375416,
+        "total_latency_ms": 18235.794979,
+        "avg_request_latency_ms": 182.33302553,
+        "request_throughput_req_s": 5.4837203486416755,
+        "system_output_throughput_tok_s": 219.34881394566702,
+        "system_total_throughput_tok_s": 4430.8460417024735,
+        "output_throughput_per_user_tok_s": 236.0816848344235,
+        "output_throughput_per_gpu_tok_s": 219.34881394566702,
         "request_latency_percentiles_ms": {
-            "p50": 163.999958,
-            "p90": 236.36201599999998,
-            "p95": 325.668868,
-            "p99": 325.668868,
-            "minimum": 128.348434,
-            "maximum": 325.668868,
-            "average": 172.2130666
+            "p50": 168.812742,
+            "p90": 275.867321,
+            "p95": 298.303345,
+            "p99": 364.67693399999996,
+            "minimum": 128.53436,
+            "maximum": 364.67693399999996,
+            "average": 182.33302553
         }
     },
     "streaming_metrics": {
-        "token_output_speed_tok_s": 13926.071191374931,
-        "avg_ttft_ms": 46.286063899999995,
-        "avg_tpot_ms": 3.228897505128205,
+        "token_output_speed_tok_s": 8197.250695805158,
+        "avg_ttft_ms": 39.077281189999994,
+        "avg_tpot_ms": 3.6732242138461535,
         "tpot_percentiles": {
-            "p50": 3.0854024358974357,
-            "p90": 5.5128031538461535,
-            "p95": 7.915650358974359,
-            "p99": 7.915650358974359,
-            "minimum": 0.0037009487179487177,
-            "maximum": 7.915650358974359,
-            "average": 3.228897505128205
+            "p50": 3.439556230769231,
+            "p90": 5.72128958974359,
+            "p95": 6.856152102564103,
+            "p99": 8.564815,
+            "minimum": 0.003635025641025641,
+            "maximum": 8.564815,
+            "average": 3.6732242138461535
         },
         "ttft_percentiles": {
-            "p50": 35.401464,
-            "p90": 109.880574,
-            "p95": 148.017835,
-            "p99": 148.017835,
-            "minimum": 11.414878,
-            "maximum": 148.017835,
-            "average": 46.286063899999995
+            "p50": 17.894135,
+            "p90": 99.38584,
+            "p95": 148.928384,
+            "p99": 298.000255,
+            "minimum": 10.894834999999999,
+            "maximum": 298.000255,
+            "average": 39.077281189999994
         },
         "gen_tps_percentiles": {
-            "p50": 326.42921864922937,
-            "p90": 2111.776892395762,
-            "p95": 270200.9879656637,
-            "p99": 270200.9879656637,
-            "minimum": 126.3320074346451,
-            "maximum": 270200.9879656637,
-            "average": 13926.071191374931
+            "p50": 291.26343888573484,
+            "p90": 480.97257093590054,
+            "p95": 1695.8264016429166,
+            "p99": 275101.2231423613,
+            "minimum": 116.7567542322864,
+            "maximum": 275101.2231423613,
+            "average": 8197.250695805158
         }
     },
     "dataset": {
@@ -112,7 +112,7 @@
             "maximum": 808.0,
             "average": 808.0
         },
-        "num_requests": 20,
+        "num_requests": 100,
         "dataset_path": "/media/masa/ssd_data/trtllm-latency/measurements/rtx4070ti_qwen25_0p5b_official_cli_longctx/datasets/in768_out40.json",
         "max_isl": 768,
         "max_osl": 40,
