@@ -18,6 +18,7 @@ This is required on single-GPU TP1 runs to avoid the default proxy+MPI path and 
 Default examples below use `Qwen/Qwen2.5-0.5B-Instruct`, but the scripts are parameterized with environment variables and can be reused for other HF models.
 
 ```bash
+cd /path/to/trtllm-latency
 ./setup_uv_env.sh
 source ./env.sh
 
@@ -67,6 +68,9 @@ INPUT_LENGTHS="8 16 32 64 128" OUTPUT_LEN=40 NUM_REQUESTS=100 WARMUP=10 ./run_la
 
 ## Notes
 
+- Dependencies are managed in [`pyproject.toml`](/media/masa/ssd_data/trtllm-latency/pyproject.toml) and installed with `uv sync`.
+- `torch` and `torchvision` are pinned to the CUDA 13 PyTorch index via `tool.uv.sources`.
+- `UV_CACHE_DIR` defaults to `.uv-cache/` inside the repo so large wheel downloads stay on the SSD-mounted experiment directory.
 - The scripts assume CUDA 13 wheels for PyTorch because `tensorrt_llm==1.2.0` was validated in that setup.
 - The engine is intentionally compiled for `batch_size=1` latency, not throughput.
 - Default input-length sweep is `8, 16, 32, 64, 87` with fixed output length `40`.

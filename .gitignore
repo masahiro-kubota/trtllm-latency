@@ -1,6 +1,8 @@
 .venv/
+.uv-cache/
 .hf-home/
 models/
 artifacts/
+model.cache
 __pycache__/
 *.pyc

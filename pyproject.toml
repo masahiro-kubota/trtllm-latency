@@ -2,4 +2,18 @@
 name = "trtllm-latency"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = [
+    "torch==2.9.1",
+    "torchvision==0.24.1",
+    "tensorrt-llm==1.2.0",
+    "huggingface-hub>=0.32.0",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cu130" }]
+torchvision = [{ index = "pytorch-cu130" }]
