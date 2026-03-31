@@ -1,0 +1,6 @@
+.venv/
+.hf-home/
+models/
+artifacts/
+__pycache__/
+*.pyc
