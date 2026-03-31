@@ -1,0 +1,124 @@
+{
+    "engine": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "model_path": "None",
+        "engine_dir": "/media/masa/ssd_data/minipamayo_experiments/tensorrt_llm_bench/workspaces/qwen25_0p5b_fp16_bs1/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
+        "revision": null,
+        "version": "1.2.0",
+        "backend": "TRT",
+        "dtype": "bfloat16",
+        "kv_cache_dtype": null,
+        "quantization": null,
+        "max_input_length": 127,
+        "max_sequence_length": 127
+    },
+    "machine": {
+        "name": "NVIDIA GeForce RTX 4070 Ti",
+        "memory.total": 11.5906982421875,
+        "clocks.mem": 10.501
+    },
+    "world_info": {
+        "tp_size": 1,
+        "pp_size": 1,
+        "ep_size": 1,
+        "world_size": 1,
+        "max_batch_size": 1,
+        "max_num_tokens": 127,
+        "scheduling_policy": "GUARANTEED_NO_EVICT",
+        "kv_cache_percentage": 0.9,
+        "issue_rate": 1.606191039e+17
+    },
+    "request_info": {
+        "num_requests": 20,
+        "avg_num_concurrent_requests": 0.9998447732543029,
+        "avg_input_length": 64.0,
+        "avg_output_length": 40.0
+    },
+    "performance": {
+        "total_latency_ms": 3652.3409509999997,
+        "avg_request_latency_ms": 182.5887005,
+        "request_throughput_req_s": 5.475940025403176,
+        "system_output_throughput_tok_s": 219.03760101612704,
+        "system_total_throughput_tok_s": 569.4977626419303,
+        "output_throughput_per_user_tok_s": 247.19093244836475,
+        "output_throughput_per_gpu_tok_s": 219.03760101612704,
+        "request_latency_percentiles_ms": {
+            "p50": 168.079267,
+            "p90": 269.020777,
+            "p95": 439.958873,
+            "p99": 439.958873,
+            "minimum": 118.03707999999999,
+            "maximum": 439.958873,
+            "average": 182.5887005
+        }
+    },
+    "streaming_metrics": {
+        "token_output_speed_tok_s": 283.4811877253002,
+        "avg_ttft_ms": 15.69475855,
+        "avg_tpot_ms": 4.279331844871795,
+        "tpot_percentiles": {
+            "p50": 4.216104820512821,
+            "p90": 6.805730128205128,
+            "p95": 10.564102179487179,
+            "p99": 10.564102179487179,
+            "minimum": 1.533666076923077,
+            "maximum": 10.564102179487179,
+            "average": 4.279331844871795
+        },
+        "ttft_percentiles": {
+            "p50": 3.750431,
+            "p90": 52.025507,
+            "p95": 58.985248999999996,
+            "p99": 58.985248999999996,
+            "minimum": 3.5662179999999997,
+            "maximum": 58.985248999999996,
+            "average": 15.69475855
+        },
+        "gen_tps_percentiles": {
+            "p50": 292.02004461527173,
+            "p90": 488.36908330681223,
+            "p95": 652.032417647428,
+            "p99": 652.032417647428,
+            "minimum": 94.6601976211237,
+            "maximum": 652.032417647428,
+            "average": 283.4811877253002
+        }
+    },
+    "dataset": {
+        "isl_stats": {
+            "p50": 64.0,
+            "p90": 64.0,
+            "p95": 64.0,
+            "p99": 64.0,
+            "minimum": 64.0,
+            "maximum": 64.0,
+            "average": 64.0
+        },
+        "osl_stats": {
+            "p50": 40.0,
+            "p90": 40.0,
+            "p95": 40.0,
+            "p99": 40.0,
+            "minimum": 40.0,
+            "maximum": 40.0,
+            "average": 40.0
+        },
+        "seq_len_stats": {
+            "p50": 104.0,
+            "p90": 104.0,
+            "p95": 104.0,
+            "p99": 104.0,
+            "minimum": 104.0,
+            "maximum": 104.0,
+            "average": 104.0
+        },
+        "num_requests": 20,
+        "dataset_path": "/media/masa/ssd_data/minipamayo_experiments/tensorrt_llm_bench/datasets/in64_out40.json",
+        "max_isl": 64,
+        "max_osl": 40,
+        "max_sequence_length": 104,
+        "avg_isl": 64,
+        "avg_osl": 40,
+        "avg_sequence_length": 104
+    }
+}

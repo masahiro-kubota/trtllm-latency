@@ -1,0 +1,124 @@
+{
+    "engine": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "model_path": "None",
+        "engine_dir": "/media/masa/ssd_data/minipamayo_experiments/tensorrt_llm_bench/workspaces/qwen25_0p5b_fp16_bs1/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
+        "revision": null,
+        "version": "1.2.0",
+        "backend": "TRT",
+        "dtype": "bfloat16",
+        "kv_cache_dtype": null,
+        "quantization": null,
+        "max_input_length": 127,
+        "max_sequence_length": 127
+    },
+    "machine": {
+        "name": "NVIDIA GeForce RTX 4070 Ti",
+        "memory.total": 11.5906982421875,
+        "clocks.mem": 10.501
+    },
+    "world_info": {
+        "tp_size": 1,
+        "pp_size": 1,
+        "ep_size": 1,
+        "world_size": 1,
+        "max_batch_size": 1,
+        "max_num_tokens": 127,
+        "scheduling_policy": "GUARANTEED_NO_EVICT",
+        "kv_cache_percentage": 0.9,
+        "issue_rate": 1.472877544e+17
+    },
+    "request_info": {
+        "num_requests": 20,
+        "avg_num_concurrent_requests": 0.9998733410988389,
+        "avg_input_length": 16.0,
+        "avg_output_length": 40.0
+    },
+    "performance": {
+        "total_latency_ms": 3088.041949,
+        "avg_request_latency_ms": 154.38254105000001,
+        "request_throughput_req_s": 6.476595956371836,
+        "system_output_throughput_tok_s": 259.06383825487336,
+        "system_total_throughput_tok_s": 362.6893735568228,
+        "output_throughput_per_user_tok_s": 280.1501061957661,
+        "output_throughput_per_gpu_tok_s": 259.06383825487336,
+        "request_latency_percentiles_ms": {
+            "p50": 142.286861,
+            "p90": 214.48913499999998,
+            "p95": 366.060227,
+            "p99": 366.060227,
+            "minimum": 114.89224,
+            "maximum": 366.060227,
+            "average": 154.38254105000001
+        }
+    },
+    "streaming_metrics": {
+        "token_output_speed_tok_s": 14391.200427818336,
+        "avg_ttft_ms": 30.8093241,
+        "avg_tpot_ms": 3.168544024358974,
+        "tpot_percentiles": {
+            "p50": 2.8808832564102564,
+            "p90": 5.409670153846154,
+            "p95": 9.297153282051282,
+            "p99": 9.297153282051282,
+            "minimum": 0.0035574102564102563,
+            "maximum": 9.297153282051282,
+            "average": 3.168544024358974
+        },
+        "ttft_percentiles": {
+            "p50": 8.846278,
+            "p90": 82.965426,
+            "p95": 171.75945299999998,
+            "p99": 171.75945299999998,
+            "minimum": 3.4625179999999998,
+            "maximum": 171.75945299999998,
+            "average": 30.8093241
+        },
+        "gen_tps_percentiles": {
+            "p50": 349.4094720105722,
+            "p90": 614.1308968356622,
+            "p95": 281103.36675340025,
+            "p99": 281103.36675340025,
+            "minimum": 107.55980563755581,
+            "maximum": 281103.36675340025,
+            "average": 14391.200427818336
+        }
+    },
+    "dataset": {
+        "isl_stats": {
+            "p50": 16.0,
+            "p90": 16.0,
+            "p95": 16.0,
+            "p99": 16.0,
+            "minimum": 16.0,
+            "maximum": 16.0,
+            "average": 16.0
+        },
+        "osl_stats": {
+            "p50": 40.0,
+            "p90": 40.0,
+            "p95": 40.0,
+            "p99": 40.0,
+            "minimum": 40.0,
+            "maximum": 40.0,
+            "average": 40.0
+        },
+        "seq_len_stats": {
+            "p50": 56.0,
+            "p90": 56.0,
+            "p95": 56.0,
+            "p99": 56.0,
+            "minimum": 56.0,
+            "maximum": 56.0,
+            "average": 56.0
+        },
+        "num_requests": 20,
+        "dataset_path": "/media/masa/ssd_data/minipamayo_experiments/tensorrt_llm_bench/datasets/in16_out40.json",
+        "max_isl": 16,
+        "max_osl": 40,
+        "max_sequence_length": 56,
+        "avg_isl": 16,
+        "avg_osl": 40,
+        "avg_sequence_length": 56
+    }
+}
