@@ -1,0 +1,124 @@
+{
+    "engine": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "model_path": "None",
+        "engine_dir": "/tmp/trtllm_fp8_tgt9192_test/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
+        "revision": null,
+        "version": "1.2.0",
+        "backend": "TRT",
+        "dtype": "bfloat16",
+        "kv_cache_dtype": "FP8",
+        "quantization": "FP8",
+        "max_input_length": 1024,
+        "max_sequence_length": 9233
+    },
+    "machine": {
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory.total": 94.97064208984375,
+        "clocks.mem": 12.481
+    },
+    "world_info": {
+        "tp_size": 1,
+        "pp_size": 1,
+        "ep_size": 1,
+        "world_size": 1,
+        "max_batch_size": 1,
+        "max_num_tokens": 32768,
+        "scheduling_policy": "GUARANTEED_NO_EVICT",
+        "kv_cache_percentage": 0.9,
+        "issue_rate": 1.1926762331e+17
+    },
+    "request_info": {
+        "num_requests": 100,
+        "avg_num_concurrent_requests": 0.9998316448877079,
+        "avg_input_length": 9192.0,
+        "avg_output_length": 40.0
+    },
+    "performance": {
+        "total_latency_ms": 12046.679025,
+        "avg_request_latency_ms": 120.44650904999999,
+        "request_throughput_req_s": 8.301042950714793,
+        "system_output_throughput_tok_s": 332.0417180285917,
+        "system_total_throughput_tok_s": 76635.22852099896,
+        "output_throughput_per_user_tok_s": 332.10598442336385,
+        "output_throughput_per_gpu_tok_s": 332.0417180285917,
+        "request_latency_percentiles_ms": {
+            "p50": 120.609483,
+            "p90": 121.170785,
+            "p95": 121.37538199999999,
+            "p99": 122.43433999999999,
+            "minimum": 119.081992,
+            "maximum": 122.43433999999999,
+            "average": 120.44650904999999
+        }
+    },
+    "streaming_metrics": {
+        "token_output_speed_tok_s": 525.769949550705,
+        "avg_ttft_ms": 46.26592934,
+        "avg_tpot_ms": 1.9020661464102564,
+        "tpot_percentiles": {
+            "p50": 1.9044458717948716,
+            "p90": 1.920721333333333,
+            "p95": 1.9239171538461537,
+            "p99": 1.9474228974358974,
+            "minimum": 1.876259487179487,
+            "maximum": 1.9474228974358974,
+            "average": 1.9020661464102564
+        },
+        "ttft_percentiles": {
+            "p50": 46.305208,
+            "p90": 46.449853999999995,
+            "p95": 46.484846999999995,
+            "p99": 46.726029,
+            "minimum": 45.804556,
+            "maximum": 46.726029,
+            "average": 46.26592934
+        },
+        "gen_tps_percentiles": {
+            "p50": 525.1473048289032,
+            "p90": 530.6333619399139,
+            "p95": 531.1631007803671,
+            "p99": 532.9753196895296,
+            "minimum": 513.4991487039946,
+            "maximum": 532.9753196895296,
+            "average": 525.769949550705
+        }
+    },
+    "dataset": {
+        "isl_stats": {
+            "p50": 9192.0,
+            "p90": 9192.0,
+            "p95": 9192.0,
+            "p99": 9192.0,
+            "minimum": 9192.0,
+            "maximum": 9192.0,
+            "average": 9192.0
+        },
+        "osl_stats": {
+            "p50": 40.0,
+            "p90": 40.0,
+            "p95": 40.0,
+            "p99": 40.0,
+            "minimum": 40.0,
+            "maximum": 40.0,
+            "average": 40.0
+        },
+        "seq_len_stats": {
+            "p50": 9232.0,
+            "p90": 9232.0,
+            "p95": 9232.0,
+            "p99": 9232.0,
+            "minimum": 9232.0,
+            "maximum": 9232.0,
+            "average": 9232.0
+        },
+        "num_requests": 100,
+        "dataset_path": "/workspace/trtllm-latency/measurements/rtx6000_qwen25_0p5b_official_cli_longctx_fp8/datasets/in9192_out40.json",
+        "max_isl": 9192,
+        "max_osl": 40,
+        "max_sequence_length": 9232,
+        "avg_isl": 9192,
+        "avg_osl": 40,
+        "avg_sequence_length": 9232
+    }
+}

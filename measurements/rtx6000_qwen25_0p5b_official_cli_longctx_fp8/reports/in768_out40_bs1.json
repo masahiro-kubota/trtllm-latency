@@ -1,0 +1,124 @@
+{
+    "engine": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "model_path": "None",
+        "engine_dir": "/tmp/trtllm_fp8_tgt9192_test/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
+        "revision": null,
+        "version": "1.2.0",
+        "backend": "TRT",
+        "dtype": "bfloat16",
+        "kv_cache_dtype": "FP8",
+        "quantization": "FP8",
+        "max_input_length": 1024,
+        "max_sequence_length": 9233
+    },
+    "machine": {
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory.total": 94.97064208984375,
+        "clocks.mem": 12.481
+    },
+    "world_info": {
+        "tp_size": 1,
+        "pp_size": 1,
+        "ep_size": 1,
+        "world_size": 1,
+        "max_batch_size": 1,
+        "max_num_tokens": 32768,
+        "scheduling_policy": "GUARANTEED_NO_EVICT",
+        "kv_cache_percentage": 0.9,
+        "issue_rate": 6.876863015000001e+16
+    },
+    "request_info": {
+        "num_requests": 100,
+        "avg_num_concurrent_requests": 0.9997344950604773,
+        "avg_input_length": 768.0,
+        "avg_output_length": 40.0
+    },
+    "performance": {
+        "total_latency_ms": 6945.863241999999,
+        "avg_request_latency_ms": 69.44019081,
+        "request_throughput_req_s": 14.397058582340572,
+        "system_output_throughput_tok_s": 575.8823432936227,
+        "system_total_throughput_tok_s": 11632.823334531182,
+        "output_throughput_per_user_tok_s": 576.2462316807329,
+        "output_throughput_per_gpu_tok_s": 575.8823432936227,
+        "request_latency_percentiles_ms": {
+            "p50": 69.14448399999999,
+            "p90": 69.94322199999999,
+            "p95": 70.773697,
+            "p99": 81.840048,
+            "minimum": 68.81751299999999,
+            "maximum": 81.840048,
+            "average": 69.44019081
+        }
+    },
+    "streaming_metrics": {
+        "token_output_speed_tok_s": 600.8681832360318,
+        "avg_ttft_ms": 4.4976188299999995,
+        "avg_tpot_ms": 1.6651941533333332,
+        "tpot_percentiles": {
+            "p50": 1.6622532820512819,
+            "p90": 1.6807548717948717,
+            "p95": 1.6920063846153843,
+            "p99": 1.9895244615384615,
+            "minimum": 1.484766282051282,
+            "maximum": 1.9895244615384615,
+            "average": 1.6651941533333332
+        },
+        "ttft_percentiles": {
+            "p50": 4.3264,
+            "p90": 4.662805,
+            "p95": 5.923856,
+            "p99": 11.119439999999999,
+            "minimum": 4.240691,
+            "maximum": 11.119439999999999,
+            "average": 4.4976188299999995
+        },
+        "gen_tps_percentiles": {
+            "p50": 601.6429480504454,
+            "p90": 604.8607353133765,
+            "p95": 616.5608529673581,
+            "p99": 673.5066738035348,
+            "minimum": 502.6326739540157,
+            "maximum": 673.5066738035348,
+            "average": 600.8681832360318
+        }
+    },
+    "dataset": {
+        "isl_stats": {
+            "p50": 768.0,
+            "p90": 768.0,
+            "p95": 768.0,
+            "p99": 768.0,
+            "minimum": 768.0,
+            "maximum": 768.0,
+            "average": 768.0
+        },
+        "osl_stats": {
+            "p50": 40.0,
+            "p90": 40.0,
+            "p95": 40.0,
+            "p99": 40.0,
+            "minimum": 40.0,
+            "maximum": 40.0,
+            "average": 40.0
+        },
+        "seq_len_stats": {
+            "p50": 808.0,
+            "p90": 808.0,
+            "p95": 808.0,
+            "p99": 808.0,
+            "minimum": 808.0,
+            "maximum": 808.0,
+            "average": 808.0
+        },
+        "num_requests": 100,
+        "dataset_path": "/workspace/trtllm-latency/measurements/rtx6000_qwen25_0p5b_official_cli_longctx_fp8/datasets/in768_out40.json",
+        "max_isl": 768,
+        "max_osl": 40,
+        "max_sequence_length": 808,
+        "avg_isl": 768,
+        "avg_osl": 40,
+        "avg_sequence_length": 808
+    }
+}

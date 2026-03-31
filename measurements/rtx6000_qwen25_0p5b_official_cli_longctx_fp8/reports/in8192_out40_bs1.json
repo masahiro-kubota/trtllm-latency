@@ -1,0 +1,124 @@
+{
+    "engine": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "model_path": "None",
+        "engine_dir": "/tmp/trtllm_fp8_tgt9192_test/Qwen/Qwen2.5-0.5B-Instruct/tp_1_pp_1",
+        "revision": null,
+        "version": "1.2.0",
+        "backend": "TRT",
+        "dtype": "bfloat16",
+        "kv_cache_dtype": "FP8",
+        "quantization": "FP8",
+        "max_input_length": 1024,
+        "max_sequence_length": 9233
+    },
+    "machine": {
+        "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "memory.total": 94.97064208984375,
+        "clocks.mem": 12.481
+    },
+    "world_info": {
+        "tp_size": 1,
+        "pp_size": 1,
+        "ep_size": 1,
+        "world_size": 1,
+        "max_batch_size": 1,
+        "max_num_tokens": 32768,
+        "scheduling_policy": "GUARANTEED_NO_EVICT",
+        "kv_cache_percentage": 0.9,
+        "issue_rate": 1.1188578706e+17
+    },
+    "request_info": {
+        "num_requests": 100,
+        "avg_num_concurrent_requests": 0.9997501031088138,
+        "avg_input_length": 8192.0,
+        "avg_output_length": 40.0
+    },
+    "performance": {
+        "total_latency_ms": 11300.968917999999,
+        "avg_request_latency_ms": 112.98144840999998,
+        "request_throughput_req_s": 8.848798782263849,
+        "system_output_throughput_tok_s": 353.95195129055395,
+        "system_total_throughput_tok_s": 72843.311575596,
+        "output_throughput_per_user_tok_s": 354.04972897588647,
+        "output_throughput_per_gpu_tok_s": 353.95195129055395,
+        "request_latency_percentiles_ms": {
+            "p50": 112.91361699999999,
+            "p90": 113.68276,
+            "p95": 114.27956599999999,
+            "p99": 115.55439899999999,
+            "minimum": 111.840277,
+            "maximum": 115.55439899999999,
+            "average": 112.98144840999998
+        }
+    },
+    "streaming_metrics": {
+        "token_output_speed_tok_s": 535.1407863475335,
+        "avg_ttft_ms": 40.0990161,
+        "avg_tpot_ms": 1.8687803156410254,
+        "tpot_percentiles": {
+            "p50": 1.8690148974358973,
+            "p90": 1.8839296153846155,
+            "p95": 1.8978489230769229,
+            "p99": 1.9392983076923076,
+            "minimum": 1.805011974358974,
+            "maximum": 1.9392983076923076,
+            "average": 1.8687803156410254
+        },
+        "ttft_percentiles": {
+            "p50": 40.027454,
+            "p90": 40.447683,
+            "p95": 40.51827,
+            "p99": 43.884099,
+            "minimum": 39.599892,
+            "maximum": 43.884099,
+            "average": 40.0990161
+        },
+        "gen_tps_percentiles": {
+            "p50": 535.1932001480811,
+            "p90": 538.1436123436401,
+            "p95": 541.345257957123,
+            "p99": 554.0129451801208,
+            "minimum": 515.6504267721259,
+            "maximum": 554.0129451801208,
+            "average": 535.1407863475335
+        }
+    },
+    "dataset": {
+        "isl_stats": {
+            "p50": 8192.0,
+            "p90": 8192.0,
+            "p95": 8192.0,
+            "p99": 8192.0,
+            "minimum": 8192.0,
+            "maximum": 8192.0,
+            "average": 8192.0
+        },
+        "osl_stats": {
+            "p50": 40.0,
+            "p90": 40.0,
+            "p95": 40.0,
+            "p99": 40.0,
+            "minimum": 40.0,
+            "maximum": 40.0,
+            "average": 40.0
+        },
+        "seq_len_stats": {
+            "p50": 8232.0,
+            "p90": 8232.0,
+            "p95": 8232.0,
+            "p99": 8232.0,
+            "minimum": 8232.0,
+            "maximum": 8232.0,
+            "average": 8232.0
+        },
+        "num_requests": 100,
+        "dataset_path": "/workspace/trtllm-latency/measurements/rtx6000_qwen25_0p5b_official_cli_longctx_fp8/datasets/in8192_out40.json",
+        "max_isl": 8192,
+        "max_osl": 40,
+        "max_sequence_length": 8232,
+        "avg_isl": 8192,
+        "avg_osl": 40,
+        "avg_sequence_length": 8232
+    }
+}
