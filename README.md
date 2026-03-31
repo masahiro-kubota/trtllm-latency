@@ -74,3 +74,25 @@ INPUT_LENGTHS="8 16 32 64 128" OUTPUT_LEN=40 NUM_REQUESTS=100 WARMUP=10 ./run_la
 - The scripts assume CUDA 13 wheels for PyTorch because `tensorrt_llm==1.2.0` was validated in that setup.
 - The engine is intentionally compiled for `batch_size=1` latency, not throughput.
 - Default input-length sweep is `8, 16, 32, 64, 87` with fixed output length `40`.
+
+## Paper-gap matrix
+
+To compare `FP16` vs `FP8` and `target_input_len/target_output_len` hints for the
+paper-like `input=87`, `output=40` case:
+
+```bash
+./run_paper_gap_matrix.sh
+```
+
+Outputs are written under:
+
+- `${ARTIFACT_ROOT}/matrix_reports`
+
+Important status note:
+
+- `greedy` decoding is implemented and measured via [`configs/greedy.yaml`](/media/masa/ssd_data/trtllm-latency/configs/greedy.yaml).
+- A full 3-way comparison of `bf16` vs `fp8` vs `fp8+kv` is **not done yet**.
+- Current measurements only cover:
+  - `bf16` baseline
+  - `fp8` in the official CLI path, which effectively behaves as `fp8(+kv)` in the current setup
+- The unresolved gap is that the official `trtllm-bench build` surface does not cleanly expose a separate `kv_cache_quant_algo` control for this repo's current workflow, so `fp8` and `fp8+kv` have not yet been split into separate reproduced measurements.
