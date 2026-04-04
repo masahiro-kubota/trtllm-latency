@@ -126,6 +126,32 @@ Build step for xgrammar failed: 2
 - Relevant logs:
   - `logs/build_wheel.log`
 
+### 6. CMake configure failed because UCX development files were missing
+
+- Symptom:
+  - Configure progressed past MPI and PyTorch, then failed in the UCX / NIXL
+    path.
+- Error shape:
+
+```text
+Could not find a package configuration file provided by "ucx"
+  with any of the following names:
+
+    ucxConfig.cmake
+    ucx-config.cmake
+```
+
+- Root cause:
+  - The host had the UCX runtime package `libucx0`, but not the development
+    package that provides CMake package metadata.
+  - TensorRT-LLM's CMake reaches `find_package(ucx)` before `find_package(NIXL)`
+    when `ENABLE_UCX` is active.
+- Planned resolution:
+  - Install `libucx-dev`
+  - Rerun `build_wheel.py --configure_cmake ...`
+- Relevant logs:
+  - `logs/build_wheel.log`
+
 ## Commands Used For Live Diagnosis
 
 These were useful when `tail -f` looked frozen:
@@ -135,3 +161,32 @@ tail -f /workspace/trtllm-latency/measurements/rtx6000_qwen35_0p8b_official_cli_
 ps -eo pid,etime,stat,cmd | rg 'build_wheel.py|cmake --build|git clone|git checkout|json-populate|deepgemm'
 cat /proc/<pid>/io | sed -n '1,4p'
 ```
+
+### 7. Official `install_nixl.sh` failed because it only searched `/usr/local` for `libcuda.so.1`
+
+- Symptom:
+  - The official NIXL installer cloned successfully and started setup, but then
+    exited before Meson configure:
+
+```text
++ find /usr/local -name libcuda.so.1
++ head -n1
++ CUDA_SO_PATH=
++ [[ -z '' ]]
++ echo 'libcuda.so.1 not found'
+libcuda.so.1 not found
++ exit 1
+```
+
+- Root cause:
+  - On this Runpod host, the driver library exists at:
+    - `/usr/lib/x86_64-linux-gnu/libcuda.so.1`
+  - The current helper script
+    `/workspace/TensorRT-LLM/docker/common/install_nixl.sh`
+    only searches under `/usr/local`, so it misses the actual host location.
+- Resolution status:
+  - Not resolved yet in this attempt.
+  - This is now the next blocker before rerunning `build_wheel.py`.
+- Relevant logs:
+  - `logs/install_nixl.log`
+  - `logs/build_wheel.log`
