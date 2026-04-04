@@ -101,6 +101,31 @@ gmake: *** No rule to make target 'Makefile'.  Stop.
 - Relevant logs:
   - `logs/build_wheel.log`
 
+### 5. `xgrammar` patch step failed on reconfigure because the patch was already applied
+
+- Symptom:
+  - A forced reconfigure with `--configure_cmake` failed during
+    `xgrammar-populate`:
+
+```text
+patching file cpp/grammar_functor.cc
+Reversed (or previously applied) patch detected!  Skipping patch.
+1 out of 1 hunk ignored -- saving rejects to file cpp/grammar_functor.cc.rej
+Build step for xgrammar failed: 2
+```
+
+- Root cause:
+  - `_deps/xgrammar-src` was already present from the earlier configure path.
+  - TensorRT-LLM's FetchContent flow re-entered the `xgrammar` patch step and
+    tried to apply the same patch again.
+  - This is a dependency cache state issue triggered by reconfigure, not a new
+    compiler or toolchain incompatibility.
+- Planned resolution:
+  - Remove only the cached `xgrammar` dependency state under `cpp/build/_deps`
+    and let FetchContent repopulate it cleanly on the next configure.
+- Relevant logs:
+  - `logs/build_wheel.log`
+
 ## Commands Used For Live Diagnosis
 
 These were useful when `tail -f` looked frozen:
