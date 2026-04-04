@@ -1,0 +1,8 @@
+/usr/local/tensorrt/include/NvInfer.h
+/usr/local/tensorrt/include/NvOnnxParser.h
+/usr/local/tensorrt/lib/libnvinfer.so
+/usr/local/tensorrt/lib/libnvinfer.so.10
+/usr/local/tensorrt/lib/libnvinfer.so.10.14.1
+/usr/local/tensorrt/lib/libnvonnxparser.so
+/usr/local/tensorrt/lib/libnvonnxparser.so.10
+/usr/local/tensorrt/lib/libnvonnxparser.so.10.14.1

@@ -9,6 +9,7 @@ MODEL_PATH="${MODEL_PATH:-${MODEL_CACHE_ROOT}/Qwen2.5-0.5B-Instruct}"
 QUANTIZATION="${QUANTIZATION:-}"
 TARGET_INPUT_LEN="${TARGET_INPUT_LEN:-}"
 TARGET_OUTPUT_LEN="${TARGET_OUTPUT_LEN:-}"
+TRUST_REMOTE_CODE="${TRUST_REMOTE_CODE:-0}"
 ENGINE_TAG_DEFAULT="$(basename "${MODEL_PATH}")_bs1_seq127_tok127"
 if [[ -n "${QUANTIZATION}" ]]; then
   ENGINE_TAG_DEFAULT+="_$(echo "${QUANTIZATION}" | tr '[:upper:]' '[:lower:]')"
@@ -46,6 +47,9 @@ if [[ -n "${TARGET_INPUT_LEN}" ]]; then
 fi
 if [[ -n "${TARGET_OUTPUT_LEN}" ]]; then
   build_cmd+=(--target_output_len "${TARGET_OUTPUT_LEN}")
+fi
+if [[ "${TRUST_REMOTE_CODE}" == "1" ]]; then
+  build_cmd+=(--trust_remote_code true)
 fi
 
 "${build_cmd[@]}"

@@ -15,6 +15,7 @@ INPUT_LENGTHS="${INPUT_LENGTHS:-8 16 32 64 87}"
 OUTPUT_LEN="${OUTPUT_LEN:-40}"
 NUM_REQUESTS="${NUM_REQUESTS:-20}"
 WARMUP="${WARMUP:-5}"
+TRUST_REMOTE_CODE="${TRUST_REMOTE_CODE:-0}"
 
 mkdir -p "${DATASET_DIR}" "${REPORT_DIR}"
 
@@ -22,19 +23,32 @@ for inlen in ${INPUT_LENGTHS}; do
   dataset="${DATASET_DIR}/in${inlen}_out${OUTPUT_LEN}.json"
   report="${REPORT_DIR}/in${inlen}_out${OUTPUT_LEN}_bs1.json"
 
-  trtllm-bench -m "${MODEL_NAME}" --model_path "${MODEL_PATH}" \
-    prepare-dataset --output "${dataset}" \
-    token-unif-dist --num-requests "${NUM_REQUESTS}" \
-    --input-min "${inlen}" --input-max "${inlen}" \
-    --output-min "${OUTPUT_LEN}" --output-max "${OUTPUT_LEN}" >/dev/null
+  prepare_cmd=(
+    trtllm-bench -m "${MODEL_NAME}" --model_path "${MODEL_PATH}"
+    prepare-dataset
+  )
+  if [[ "${TRUST_REMOTE_CODE}" == "1" ]]; then
+    prepare_cmd+=(--trust-remote-code)
+    export TRUST_REMOTE_CODE=1
+  fi
+  prepare_cmd+=(
+    --output "${dataset}"
+    token-unif-dist --num-requests "${NUM_REQUESTS}"
+    --input-min "${inlen}" --input-max "${inlen}"
+    --output-min "${OUTPUT_LEN}" --output-max "${OUTPUT_LEN}"
+  )
+  latency_cmd=(
+    trtllm-bench -m "${MODEL_NAME}" --model_path "${MODEL_PATH}"
+    latency --backend tensorrt
+    --engine_dir "${ENGINE_DIR}"
+    --dataset "${dataset}"
+    --num_requests "${NUM_REQUESTS}"
+    --warmup "${WARMUP}"
+    --report_json "${report}"
+  )
 
-  trtllm-bench -m "${MODEL_NAME}" --model_path "${MODEL_PATH}" \
-    latency --backend tensorrt \
-    --engine_dir "${ENGINE_DIR}" \
-    --dataset "${dataset}" \
-    --num_requests "${NUM_REQUESTS}" \
-    --warmup "${WARMUP}" \
-    --report_json "${report}" >/dev/null
+  "${prepare_cmd[@]}" >/dev/null
+  "${latency_cmd[@]}" >/dev/null
 
   python - <<PY
 import json

@@ -6,3 +6,6 @@ artifacts/
 model.cache
 __pycache__/
 *.pyc
+*.orig
+*.rej
+measurements/*/logs/clone_*.log

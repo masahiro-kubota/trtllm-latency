@@ -1,0 +1,28 @@
+Found existing installation: tensorrt 10.14.1.48.post1
+Uninstalling tensorrt-10.14.1.48.post1:
+  Successfully uninstalled tensorrt-10.14.1.48.post1
+Found existing installation: tensorrt_cu13 10.14.1.48.post1
+Uninstalling tensorrt_cu13-10.14.1.48.post1:
+  Successfully uninstalled tensorrt_cu13-10.14.1.48.post1
+Found existing installation: tensorrt_cu13_bindings 10.14.1.48.post1
+Uninstalling tensorrt_cu13_bindings-10.14.1.48.post1:
+  Successfully uninstalled tensorrt_cu13_bindings-10.14.1.48.post1
+Found existing installation: tensorrt_cu13_libs 10.14.1.48.post1
+Uninstalling tensorrt_cu13_libs-10.14.1.48.post1:
+  Successfully uninstalled tensorrt_cu13_libs-10.14.1.48.post1
+Processing /usr/local/tensorrt/python/tensorrt-10.14.1.48-cp312-none-linux_x86_64.whl
+Installing collected packages: tensorrt
+Successfully installed tensorrt-10.14.1.48
+
+[notice] A new release of pip is available: 25.2 -> 26.0.1
+[notice] To update, run: /workspace/TensorRT-LLM/.venv-3.12/bin/python3 -m pip install --upgrade pip
+Name: tensorrt
+Version: 10.14.1.48
+Summary: A high performance deep learning inference library
+Home-page: https://github.com/nvidia/tensorrt
+Author: NVIDIA Corporation
+Author-email: 
+License: Proprietary
+Location: /workspace/TensorRT-LLM/.venv-3.12/lib/python3.12/site-packages
+Requires: 
+Required-by: 
