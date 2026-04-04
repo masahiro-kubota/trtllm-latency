@@ -82,6 +82,25 @@ Recorded sweeps in this repo:
 - The engine is intentionally compiled for `batch_size=1` latency, not throughput.
 - Default input-length sweep is `8, 16, 32, 64, 87` with fixed output length `40`.
 
+## Off-box wheel workflow
+
+If the target GPU server is slow or inconvenient for full source builds, this
+repo supports carrying in a prebuilt custom `tensorrt_llm` wheel from another
+machine and using that wheel venv through `TRTLLM_PYTHON`.
+
+Key points:
+
+- the carried artifact should be a deployment bundle, not only the wheel
+- the target still needs official TensorRT runtime libraries and the matching
+  TensorRT Python wheel
+- `env.sh` already supports an external interpreter through `TRTLLM_PYTHON`
+
+See:
+
+- [`OFFBOX_WHEEL_WORKFLOW.md`](./OFFBOX_WHEEL_WORKFLOW.md)
+- [`package_offbox_wheel_kit.py`](./package_offbox_wheel_kit.py)
+- [`measurements/rtx6000_qwen35_0p8b_official_cli_longctx/STATUS_AND_REPRO.md`](./measurements/rtx6000_qwen35_0p8b_official_cli_longctx/STATUS_AND_REPRO.md)
+
 ## Paper-gap matrix
 
 To compare `FP16` vs `FP8` and `target_input_len/target_output_len` hints for the
