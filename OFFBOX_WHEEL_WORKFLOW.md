@@ -218,4 +218,5 @@ these in order:
 - [TensorRT-LLM build-from-source doc](https://nvidia.github.io/TensorRT-LLM/installation/build-from-source-linux.html)
 - [TensorRT-LLM Linux pip install doc](https://nvidia.github.io/TensorRT-LLM/installation/linux.html)
 - [TensorRT installation guide](https://docs.nvidia.com/deeplearning/tensorrt/10.14.1/installing-tensorrt/installing.html)
+- [`GPU_PLATFORM_NOTES.md`](./GPU_PLATFORM_NOTES.md)
 - [`STATUS_AND_REPRO.md`](./measurements/rtx6000_qwen35_0p8b_official_cli_longctx/STATUS_AND_REPRO.md)

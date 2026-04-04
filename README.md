@@ -98,6 +98,7 @@ Key points:
 See:
 
 - [`OFFBOX_WHEEL_WORKFLOW.md`](./OFFBOX_WHEEL_WORKFLOW.md)
+- [`GPU_PLATFORM_NOTES.md`](./GPU_PLATFORM_NOTES.md)
 - [`package_offbox_wheel_kit.py`](./package_offbox_wheel_kit.py)
 - [`measurements/rtx6000_qwen35_0p8b_official_cli_longctx/STATUS_AND_REPRO.md`](./measurements/rtx6000_qwen35_0p8b_official_cli_longctx/STATUS_AND_REPRO.md)
 
